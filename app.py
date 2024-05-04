@@ -11,7 +11,7 @@ def fetch_poster(movie_id):
      return full_path
 
 movies = pickle.load(open("movie_dict.pkl", 'rb'))
-similarity = pickle.load(open("similarity.pkl", 'rb'))
+similarity = pickle.load(bz2.BZ2File("similarity.pkl", 'rb'))
 movies_list=movies['title'].values
 
 st.header("Movie Recommender System")
