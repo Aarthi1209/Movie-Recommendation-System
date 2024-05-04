@@ -28,7 +28,6 @@ movies_list=movies['title'].values
 st.header("Movie Recommender System")
 
 
-imageCarouselComponent(imageUrls=imageUrls, height=200)
 selectvalue=st.selectbox("Select movie from dropdown", movies_list)
 
 def recommend(movie):
