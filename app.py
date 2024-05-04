@@ -11,7 +11,7 @@ def fetch_poster(movie_id):
      full_path = "https://image.tmdb.org/t/p/w500/"+poster_path
      return full_path
 
-movies = pickle.load(open("movies_list.pkl", 'rb'))
+movies = pickle.load(bz2.BZ2File("movies_list.pkl", 'rb'))
 similarity = pickle.load(bz2.BZ2File("similarity.pkl", 'rb'))
 movies_list=movies['title'].values
 
