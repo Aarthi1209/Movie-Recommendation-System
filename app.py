@@ -13,7 +13,16 @@ def fetch_poster(movie_id):
      return full_path
 
 movies = pickle.load(open("movie_dict.pkl", 'rb'))
-similarity = pickle.load(open("similarity.pkl", 'rb'))
+
+
+try:
+    with open("similarity.pkl", 'rb') as f:
+        similarity = pickle.load(f)
+except FileNotFoundError:
+    print("Error: File 'similarity.pkl' not found.")
+except Exception as e:
+    print("Error loading pickle file:", e)
+
 movies_list=movies['title'].values
 
 st.header("Movie Recommender System")
