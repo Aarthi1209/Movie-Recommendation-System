@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import requests
 import bz2
-import plotly.express as px
+
 
 def fetch_poster(movie_id):
      url = "https://api.themoviedb.org/3/movie/{}?api_key=c7ec19ffdd3279641fb606d19ceb9bb1&language=en-US".format(movie_id)
